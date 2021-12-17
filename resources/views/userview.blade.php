@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="container">
-    <form method="POST" action="submitee">
+    <form method="POST" action="submit">
         @csrf
         <div class="row">
       <div class="col-md-6">
