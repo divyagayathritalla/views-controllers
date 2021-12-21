@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class apitable extends Model
 {
-    public $timestamps=false;
+    //public $timestamps=false;
 
     use HasFactory;
+    function getCompany(){
+        return $this->hasMany('App\Models\companie');
+    }
+   public function getDevice(){
+       return $this->hasOne('App\Models\device');
+   }
+    
 }

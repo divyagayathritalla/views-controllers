@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\sampleController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\relationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,5 +55,5 @@ Route::get("/delete/{id}",[userController::class,'del']);
 Route::get("/delete/{id}",[userController::class,'del']);
 
 
-
-
+Route::get("data1",[relationController::class,'index1']);
+Route::get("data2",[relationController::class,'index2']);
