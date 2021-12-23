@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTitleToStudentsTable extends Migration
+class EmployeeMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class AddTitleToStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('students', function (Blueprint $table) {
-                $table->bigIncrements('id')->before('name');
-              });
-
+        //
+        Schema::create('employees',function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->string('Email');
+            $table->string('Password');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -26,8 +29,7 @@ class AddTitleToStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('students', function (Blueprint $table) {
-            $table->dropColumn('id');
-        });
+        //
+        Schema::dropIfExists('employees');
     }
 }
